@@ -1,0 +1,196 @@
+@use 'flexCenter';
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+$Blue: hsl(223, 87%, 63%);
+$Pale-Blue: hsl(223, 100%, 88%);
+$Light-Red: hsl(354, 100%, 66%);
+$Gray: hsl(0, 0%, 59%);
+$Very-Dark-Blue: hsl(209, 33%, 12%);
+$Font: 'Libre Franklin', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    min-height: 100vh;
+    font-size: 20px;
+    font-family: $Font
+}
+
+body {
+    @include flexCenter.center;
+}
+
+.page {
+    padding: 4rem;
+    @include flexCenter.center;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 900px;
+
+    &__text-area {
+        @include flexCenter.center;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    &__title {
+        font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+
+        & span {
+            color: $Blue;
+        }
+    }
+
+    &__subtitle {
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        font-weight: lighter;
+        color: $Gray;
+
+        & span {
+            font-weight: bold;
+            color: $Very-Dark-Blue;
+        }
+    }
+
+    &__paragraph {
+        font-size: clamp(.7rem, 1.5vw, 1rem)
+    }
+
+    &__email-area {
+        position: relative;
+        @include flexCenter.center;
+        gap: 2rem;
+        width: 100%;
+
+        &-email {
+            font-family: inherit;
+            border-radius: 2rem;
+            border: 1px solid $Pale-Blue;
+            padding: .8rem;
+            width: 80%;
+            font-size: .8rem;
+
+            &::placeholder {
+                color: $Pale-Blue;
+            }
+        }
+
+        &-btn {
+            box-shadow: 0px 6px 10px hsl(223, 100%, 88%);
+            cursor: pointer;
+            padding: .8rem 3rem;
+            color: white;
+            border: none;
+            font-size: .8rem;
+            font-family: inherit;
+            background-color: $Blue;
+            border-radius: 2rem;
+            transition: .3s
+        }
+    }
+
+    &__img-area {
+        @include flexCenter.center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__img-container {
+        width: 100%;
+        
+        padding-bottom: 3rem;
+        
+    }
+
+    &__img {
+        width: 100%
+        
+        
+    }
+
+    &__icons {
+        @include flexCenter.center;
+        gap: 1rem;
+
+        
+    }
+
+    &__copyright {
+        font-size: .6rem;
+        color: $Gray;
+    }
+
+}
+
+.icon {
+    cursor: pointer;
+    color: $Blue;
+    font-size: .7rem;
+    padding: .3rem;
+    border-radius: 50%;
+    border: 1px solid $Pale-Blue;
+    transition: .3s;
+}
+.warning {
+    position: absolute;
+    max-height: 16px;
+    transition: .3s;
+    font-style: italic;
+    color: $Light-Red;
+    font-weight: 600;
+    font-size: .6rem;
+    top: 60px;
+    left: 25px;
+}
+.none {
+    opacity: 0;
+    transform: translate(-10%);
+    overflow: hidden;
+    max-height: 0px;
+}
+@media (hover:hover) {
+    .icon:hover {
+        color: white;
+        background-color: $Blue;
+        transform: scale(1.4);
+    }
+
+    .page__email-area-btn:hover{
+        opacity: .8;
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 650px) {
+    .page {
+        padding: 1rem;
+
+        &__email-area {
+            flex-direction: column;
+            gap: .4rem;
+
+            &-email {
+                width: 100%;
+            }
+
+            &-btn {
+                width: 100%;
+            }
+        }
+
+    }
+    .warning {
+        top: 60px;
+        left: 50%;
+
+        transform: translate(-50%, 0px);
+    }
+    
+}
+
