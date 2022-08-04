@@ -112,6 +112,8 @@ body {
 .icon {
   cursor: pointer;
   color: hsl(223deg, 87%, 63%);
+  text-align: center;
+  width: 28px;
   font-size: 0.7rem;
   padding: 0.3rem;
   border-radius: 50%;
