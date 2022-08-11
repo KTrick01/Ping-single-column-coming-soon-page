@@ -1,6 +1,5 @@
 @use 'flexCenter';
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
-
 $Blue: hsl(223, 87%, 63%);
 $Pale-Blue: hsl(223, 100%, 88%);
 $Light-Red: hsl(354, 100%, 66%);
@@ -103,29 +102,22 @@ body {
 
     &__img-container {
         width: 100%;
-        
         padding-bottom: 3rem;
-        
     }
 
     &__img {
         width: 100%
-        
-        
     }
 
     &__icons {
         @include flexCenter.center;
         gap: 1rem;
-
-        
     }
 
     &__copyright {
         font-size: .6rem;
         color: $Gray;
     }
-
 }
 
 .icon {
@@ -139,6 +131,7 @@ body {
     border: 1px solid $Pale-Blue;
     transition: .3s;
 }
+
 .warning {
     position: absolute;
     max-height: 16px;
@@ -150,12 +143,14 @@ body {
     top: 60px;
     left: 25px;
 }
+
 .none {
     opacity: 0;
     transform: translate(-10%);
     overflow: hidden;
     max-height: 0px;
 }
+
 @media (hover:hover) {
     .icon:hover {
         color: white;
@@ -163,7 +158,7 @@ body {
         transform: scale(1.4);
     }
 
-    .page__email-area-btn:hover{
+    .page__email-area-btn:hover {
         opacity: .8;
         transform: scale(1.1);
     }
@@ -185,14 +180,11 @@ body {
                 width: 100%;
             }
         }
-
     }
+
     .warning {
         top: 60px;
         left: 50%;
-
         transform: translate(-50%, 0px);
     }
-    
 }
-
